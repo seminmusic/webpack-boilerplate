@@ -6,6 +6,9 @@ const ESLintPlugin = require("eslint-webpack-plugin");
 
 const paths = require("./paths");
 
+// eslint-disable-next-line no-console
+console.log("Node environment: \x1b[36m%s\x1b[0m", process.env.NODE_ENV);
+
 module.exports = {
   // Where webpack looks to start building the bundle
   entry: [paths.src + "/index.js"],
@@ -27,9 +30,9 @@ module.exports = {
       patterns: [
         {
           from: paths.public,
-          to: "assets",
+          to: "./assets", // relative to build folder
           globOptions: {
-            ignore: ["*.DS_Store"],
+            ignore: ["**/ignoredfolder/**", "*.DS_Store"],
           },
           noErrorOnMissing: true,
         },
@@ -39,7 +42,7 @@ module.exports = {
     // Generates an HTML file from a template
     // Generates deprecation warning: https://github.com/jantimon/html-webpack-plugin/issues/1501
     new HtmlWebpackPlugin({
-      title: "webpack Boilerplate",
+      title: "Webpack Boilerplate",
       favicon: paths.src + "/images/favicon.png",
       template: paths.src + "/template.html", // template file
       filename: "index.html", // output file

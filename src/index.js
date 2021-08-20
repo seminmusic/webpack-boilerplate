@@ -16,3 +16,8 @@ heading.textContent = example();
 
 const app = document.querySelector("#root");
 app.append(logo, heading);
+
+// Enable hot updates with HMR for this module
+if (module.hot) {
+  module.hot.accept();
+}
