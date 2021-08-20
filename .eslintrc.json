@@ -9,6 +9,7 @@
       }
     ],
     "prefer-template": "off",
+    "quotes": ["error", "double"],
     "indent": [1, 2],
     "object-curly-spacing": 1,
     "no-multiple-empty-lines": [
@@ -28,7 +29,7 @@
     "import/prefer-default-export": 0,
     "func-names": [1, "as-needed"],
     "arrow-body-style": 1,
-    "semi": [1, "never"],
+    "semi": ["error", "always"],
     "import/no-extraneous-dependencies": ["off", { "devDependencies": false }]
   },
   "env": {
